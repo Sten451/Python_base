@@ -10,8 +10,7 @@
 
 
 class Stationery:
-    def __init__(self, title):
-        self.name = title
+    title = "Канцелярская принадлежность"
 
     def draw(self):
         print("Запуск отрисовки")
@@ -32,9 +31,9 @@ class Handle(Stationery):
         print("Запуск отрисовки маркером")
 
 
-p = Pen("Ручка")
+p = Pen()
 p.draw()
-pe = Pencil("Карандаш")
+pe = Pencil()
 pe.draw()
-h = Handle("Маркер")
+h = Handle()
 h.draw()

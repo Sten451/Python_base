@@ -17,8 +17,7 @@ import time
 
 class TrafficLight:
 
-    def __init__(self):
-        self.__color = ["red", "yellow", "green"]
+    __color = ["red", "yellow", "green"]
 
     def running(self, *args):
         print("Запускаем светофор")

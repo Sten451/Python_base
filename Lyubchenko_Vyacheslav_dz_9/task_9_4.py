@@ -16,33 +16,21 @@
 
 
 class Car:
-    def __init__(self, speed, color, name, is_police):
-        if str(speed).isdigit() and isinstance(name, str) and isinstance(color, str) and isinstance(name, str) and isinstance(is_police, bool):
-            self.speed = speed
-            self.color = color
-            self.name = name
-            self.is_police = is_police
-        else:
-            try:
-                raise ValueError
-            except ValueError:
-                print("Ошибка инициализации")
-                exit()
+    speed = 180
+    color = "white"
+    name = "VAZ"
+    is_police = False
 
     def go(self):
-        if self.speed == 0:
-            print("Машина поехала")
+        print("Машина поехала")
+        # Увеличиваем скорость на 5 км при каждом вызове метода
         self.speed += 5
         self.show_speed()
 
     def stop(self):
-        if self.speed == 0:
-            print("Машина остановилась")
-        self.speed -= 5
-        if self.speed <= 0:
-            self.speed = 0
+        print("Машина остановилась")
+        self.speed = 0
         self.show_speed()
-
 
     def turn(self, direction):
         if direction == "налево" or direction == "направо":
@@ -59,10 +47,6 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
-        self.is_police = False
-
     def show_speed(self):
         if self.speed > 60:
             print("Превышена скорость, значение должно быть ниже 60 км/ч")
@@ -71,16 +55,10 @@ class TownCar(Car):
 
 
 class SportCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
-        self.is_police = False
+    speed = 350
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
-        self.is_police = False
-
     def show_speed(self):
         if self.speed > 40:
             print("Превышена скорость, знчение должно быть ниже 40 км/ч")
@@ -89,18 +67,15 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name, is_police)
-        # Не важно что передадим, параметры полиции будут такие
-        self.is_police = True
-        self.name = "Ford Mondeo"
-        self.color = "Black"
+    is_police = True
+    name = "Ford Mondeo"
+    color = "Black"
 
 
-w = WorkCar(120, "green", "GAZ", False)
-s = SportCar(120, "blue", "ferrari", False)
-t = TownCar(80, "red", "toyota", False)
-p = PoliceCar(200, "black", "21099", False)
+w = WorkCar()
+s = SportCar()
+t = TownCar()
+p = PoliceCar()
 t.show_speed()
 s.show_speed()
 w.show_speed()

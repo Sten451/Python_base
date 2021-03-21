@@ -16,9 +16,7 @@ import time
 
 
 class TrafficLight:
-
-    def __init__(self):
-        self.__color = {"red": 7, "yellow": 2, "green": 5}
+    __color = {"red": 7, "yellow": 2, "green": 5}
 
     def running(self):
         print("Запускаем светофор")
@@ -29,6 +27,7 @@ class TrafficLight:
             for i in self.__color:
                 print(i)
                 time.sleep(self.__color.get(i))
+
 
 a = TrafficLight()
 a.running()

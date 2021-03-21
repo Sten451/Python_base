@@ -13,6 +13,13 @@ Position, передать данные, проверить значения а�
 
 
 class Worker:
+    name = "Sten"
+    surname = "Shoker"
+    position = "lawyer"
+    _income = {"wage": 500, "bonus": 400}
+
+
+class Position(Worker):
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
         self.surname = surname
@@ -26,8 +33,6 @@ class Worker:
                 print("Доход должен быть int")
                 exit()
 
-
-class Position(Worker):
     def get_full_name(self):
         print("Имя:", self.name, "Фамилия:", self.surname)
 
@@ -38,7 +43,7 @@ class Position(Worker):
         print("Доход вместе с премией:", s)
 
 
-f = Position("sten", "shoker", "worker", 600, 50)
+f = Position("Misha", "Ivanov", "chief", 600, 100)
 # Проверяем значения атрибутов
 print(f.name)
 print(f.surname)
