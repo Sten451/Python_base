@@ -35,11 +35,8 @@ class Cell:
             self.value = value
             print("Клетка создана c", self.value, "ячейками")
         else:
-            try:
-                raise TypeError
-            except TypeError:
-                print("Ошибка создания клетки")
-                exit()
+            print("Ошибка создания клетки")
+            exit()
 
     def __add__(self, other):
         return Cell(self.value + other.value)

@@ -30,11 +30,8 @@ class Matrix:
             print(*row)
 
     def error(self):
-        try:
-            raise TypeError
-        except TypeError:
-            print("Ошибка инициализации матрицы")
-            exit()
+        print("Ошибка инициализации матрицы")
+        exit()
 
     def verify(self):
         # Проверяем двумя циклами: во внутреннем на int(float),
