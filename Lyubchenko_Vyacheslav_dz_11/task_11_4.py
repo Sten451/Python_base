@@ -60,17 +60,11 @@ class Complex:
                 digit_i2 = other.a[index_i2:index_i]
                 digit_two2 = other.a[:index_i2]
 
-        print(digit_i, digit_two)
-        print(digit_i2, digit_two2)
-
         s1 = int(digit_two) + int(digit_two2)
         s2 = int(digit_i) + int(digit_i2)
-        print(s1, s2)
-
-        #return Complex(self.a + other.a)
-
-    def __mul__(self, other):
-        return Complex(self.value * other.value)
+        s3 = str(s1) + str(s2) + "i"
+        print("Сумма двух комплексных чисел равна: ")
+        return Complex(s3)
 
 
 z = Complex("15-4i")
