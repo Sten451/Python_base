@@ -6,32 +6,26 @@
 """
 
 
-class Complex:
+class MyComplex:
     def __init__(self, a):
-        if (isinstance(a, str) and "+" in a and "i" in a) or (isinstance(a, str) and "-" in a and "i" in a):
-            self.a = a
-            print("Создано комплексное число:", self.a)
-        else:
-            print("Ошибка инициализации...")
-            exit()
+        self.a = a
+        print("Создано комплексное число:", self.a)
 
     def __add__(self, other):
-
         print("Сумма двух комплексных чисел равна: ")
-        return Complex(s3)
+        return MyComplex(self.a + other.a)
 
     def __mul__(self, other):
-        return Complex(self.value * other.value)
+        print("Произведение двух комплексных чисел равно: ")
+        return MyComplex(self.a * other.a)
 
 
-z = Complex("15-4i")
-x = Complex("9-8i")
+# Создаем комплексные числа
+x_com = complex(3, -2)
+t_com = complex(3, -9)
 
-s = z * x
+z = MyComplex(x_com)
+x = MyComplex(t_com)
 
-"""
-z = 1 + 2j
-print(z)
-x = complex(3, -2)
-print(x)
-"""
+s = z + x
+s2 = z * x
